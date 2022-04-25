@@ -2,6 +2,8 @@
 ## Introduction
 These are basic projects written in Python. They use various modules such as tkinter, or sqlite3. The most recent additions to this repo use the Django web development framework.
 
+_Following this course, I participated in a 2 week live project designed to simulate a single sprint in a real working development environment. You can read more about that [here](https://github.com/salxvador/PythonProjects/blob/main/LiveProject.md)._
+
 ## Projects
 
 ### [Check Files GUI](https://github.com/salxvador/PythonProjects/blob/main/FileTransferSubmission.py):
