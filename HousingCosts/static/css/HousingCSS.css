@@ -1,0 +1,114 @@
+body {
+	background: url("../images/hero-background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	margin-bottom: 100px; /* Need this so footer doesn't cover submit button on create page */
+}
+
+footer {
+    position: fixed; /* footer always visible at bottom */
+    left: 0px;
+    bottom: 0px;
+    width:100%;
+    background: #e6e6e6;
+}
+
+.center {
+    text-align: center;
+}
+
+/* SLIDESHOW */
+#slideshow-bg {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.slide {
+    display: none;
+}
+
+#slideshow-container {
+    width: 35vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+}
+
+#slideshow-container a {
+    text-decoration: none;
+}
+
+.slide-img {
+    vertical-align: middle;
+    filter: grayscale(15%);
+    height: 35vh;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.75);
+    width: 100%;
+    animation: fade 1.5s;
+    -webkit-animation: fade 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+.previous,
+.next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    color: darkgray;
+    font-weight: bolder;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.previous:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: seashell;
+}
+
+.text {
+    color: seashell;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 0 0 7px 7px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: seashell;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    z-index: 1;
+}
+
+dot:hover {
+    background-color: black;
+}

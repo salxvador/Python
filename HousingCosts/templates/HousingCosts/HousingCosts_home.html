@@ -1,0 +1,56 @@
+{% extends 'HousingCosts/HousingCosts_base.html' %}
+{% load static %}
+
+{% block title %}Housing Costs{% endblock %}
+
+{% block header %}Housing Costs Tracker{% endblock %}
+
+{% block content %}
+    <p class="text-center">You can use this app to view and track housing costs.</p>
+
+    <!--Slideshow-->
+    <div id="slideshow">
+        <div id="slideshow-bg">
+            <div id="slideshow-container" class="slideshow">
+
+                <div class="slide">
+                    <img class="slide-img" src="{% static 'images/housing1.jpg' %}" alt="Begin Your Search">
+                    <div class="text">Begin Your Housing Search Here!</div>
+                </div>
+
+                <div class="slide">
+                    <img class="slide-img" src="{% static 'images/tracker.jpg' %}" alt="Track Saved Homes">
+                    <div class="text">Use this app to track homes that you are interested in.</div>
+                </div>
+
+                <div class="slide">
+                    <img class="slide-img" src="{% static 'images/HousingBG.jpg' %}" alt="Search Realty API">
+                    <div class="text">Click Realty API Search to search for the perfect home for you.</div>
+                </div>
+
+                <div class="slide">
+                    <img class="slide-img" src="{% static 'images/growth.jpg' %}" alt="City Growth Stats">
+                    <div class="text">Click City Growth to see which cities are trending up in population.</div>
+                </div>
+
+                <div class="slide">
+                    <img class="slide-img" src="{% static 'images/django.jpg' %}" alt="Django Logo">
+                    <div class="text">This site is brought to you via the Django web development Framework.</div>
+                </div>
+
+                <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br><!--space btwn images and dots-->
+
+            <!--slideshow dots-->
+            <div class="center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'HousingCosts/HousingCosts_base.html' %}
+{% load static %}
+
+{% block title %}Housing Costs - List{% endblock %}
+
+{% block header %}All Tracked Homes{% endblock %}
+
+{% block content %}
+    <p class="text-center">*Click the <strong>Tagline</strong> for more information.</p>
+    <table class="w-75 table table-striped mx-auto">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tagline</th>
+            <th scope="col">Location</th>
+            <th scope="col">Price</th>
+        </tr>
+        </thead>
+    {% for house in house_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td><a href="{% url 'housing_costs_details' house.id %}" class="alert-link text-dark">{{ house.tagline }}</a></td>
+            <td>{{ house.city }}, {{ house.state }}</td>
+            <td><strong>{{ house.price }}</strong></td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'HousingCosts/HousingCosts_base.html' %}
+{% load static %}
+
+{% block title %}Housing Costs - Delete{% endblock %}
+
+{% block header %}Confirm Delete{% endblock %}
+
+{% block content %}
+    <h3 class="text-center">Are you sure you want to delete the house:</h3>
+    <h4 class="text-center"><strong>"{{ details.tagline }}"</strong>?</h4>
+    <div id="form-container" class="form-group mx-auto text-center mt-4">
+        <form action="{% url 'housing_costs_delete' details.id %}" method="post">
+            {% csrf_token %}
+            <input class="btn btn-sm btn-danger" type="submit" value="Confirm Delete">
+            <a class="btn btn-sm btn-secondary" href="{% url 'housing_costs_home' %}">Cancel</a>
+        </form>
+    </div>
+{% endblock %}

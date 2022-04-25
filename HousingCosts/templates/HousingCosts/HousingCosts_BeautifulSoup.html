@@ -1,0 +1,33 @@
+{% extends 'HousingCosts/HousingCosts_base.html' %}
+{% load static %}
+
+{% block title %}Housing Costs - Scraped Data{% endblock %}
+
+{% block header %}Top 15 fastest growing cities according to
+    <br><a href="https://www.consumeraffairs.com/homeowners/fastest-growing-cities.html" target="_blank" class="badge badge-primary">
+        ConsumerAffairs.com
+        </a>{% endblock %}
+
+{% block content %}
+    <p class="text-center text-light bg-info">*Click the City name to visit Google Maps</p>
+    <table class="w-75 table table-striped mx-auto">
+        <tr>
+            <th class="text-center thead-light">
+                CITY
+            </th>
+            <th class="text-center thead-light">
+                GROWTH
+            </th>
+        </tr>
+    {% for i in info %}
+        <tr>
+            <td class="font-weight-bold">
+                <a href="{{ i.link }}" class="text-dark" target="_blank">{{ i.entry }}</a>
+            </td>
+            <td>
+                {{ i.blurb }}
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

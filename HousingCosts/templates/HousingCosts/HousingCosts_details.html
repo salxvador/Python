@@ -1,0 +1,47 @@
+{% extends 'HousingCosts/HousingCosts_base.html' %}
+{% load static %}
+
+{% block title %}Housing Costs - Details{% endblock %}
+
+{% block header %}Information About this House{% endblock %}
+
+{% block content %}
+    <table class="w-75 table table-striped mx-auto">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" colspan="2" class="text-center">{{ details.tagline }}</th>
+            </tr>
+        </thead>
+            <tr>
+                <td><strong>Location:</strong></td>
+                <td>{{ details.city }}, {{ details.state }}</td>
+            </tr>
+            <tr>
+                <td><strong>Square Footage:</strong></td>
+                <td>{{ details.squareFootage }}</td>
+            </tr>
+            <tr>
+                <td><strong>Bedrooms:</strong></td>
+                <td>{{ details.bedrooms }}</td>
+            </tr>
+            <tr>
+                <td><strong>Bathrooms:</strong></td>
+                <td>{{ details.bathrooms }}</td>
+            </tr>
+            <tr>
+                <td><strong>Price:</strong></td>
+                <td>{{ details.price }}</td>
+            </tr>
+            <tr>
+                <td><strong>Notes:</strong></td>
+                <td>{{ details.notes }}</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a class="btn btn-sm btn-info float-right mx-1" href="{% url 'housing_costs_edit' details.id %}">Edit</a>
+                    <a class="btn btn-sm btn-danger float-right mx-1" href="{% url 'housing_costs_delete' details.id %}">Delete</a>
+                    <a class="btn btn-sm btn-secondary float-right mx-1" href="{% url 'housing_costs_list' %}">Back To List</a>
+                </td>
+            </tr>
+        </table>
+{% endblock %}

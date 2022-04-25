@@ -1,0 +1,54 @@
+{% extends 'HousingCosts/HousingCosts_base.html' %}
+{% load static %}
+
+{% block title %}Housing Costs - Realty API{% endblock %}
+
+{% block header %}Houses Listed in {{ payload.city|title }}, {{ payload.state_code|upper }}{% endblock %}
+
+{% block content %}
+    <p class="text-center">Data acquired from 'Realty in US' API:</p>
+    <table class="w-75 table table-striped mx-auto">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Address</th>
+            <th scope="col">Beds</th>
+            <th scope="col">Baths</th>
+            <th scope="col">SqFt</th>
+            <th scope="col">Price</th>
+        </tr>
+        </thead>
+    {% if listings %}
+    {% for i in listings %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.address }}</td>
+            <td>{{ i.beds }}</td>
+            <td>{{ i.baths}}</td>
+            <td>{{ i.sqft }}</td>
+            <td><strong>{{ i.price }}</strong></td>
+        </tr>
+
+    {% endfor %}
+    </table>
+
+    <a href="{% url 'realty_api_display' payload.offset|add:10 %}">
+        <button type="submit" class="btn btn-info w-75 btn-block mx-auto">NEXT 10 RESULTS</button>
+    </a>
+
+    <br><br>
+    <p class="font-weight-bold text-light bg-dark text-center d-flex justify-content-center">Use the form below to search:</p>
+
+    {% else %}
+    </table>
+    <p class="font-weight-bold text-danger bg-dark d-flex justify-content-center text-center">
+        This search returned no results. Please enter new search terms below:
+    </p>
+    {% endif %}
+    <form action="{% url 'realty_api_display' %}" method="post" class="form-inline mx-auto">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-info mx-auto">Submit</button>
+    </form>
+{% endblock %}
