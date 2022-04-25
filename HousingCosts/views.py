@@ -72,8 +72,8 @@ def realty_api_display(request, offset=0):
     # API endpoint, headers, and required parameters. Python generates request url automagically from these:
     url = 'https://realty-in-us.p.rapidapi.com/properties/list-for-sale'
     headers = {
-        'X-RapidAPI-Host': 'realty-in-us.p.rapidapi.com',
-        'X-RapidAPI-Key': '1dda6feeefmsh95fcaa253de27e3p137c53jsn9f798d0c5753'
+        'X-RapidAPI-Host': 'HIDDEN',
+        'X-RapidAPI-Key': 'HIDDEN'
     }
 
     listings = []
