@@ -11,3 +11,5 @@ This project allows the user to transfer all .txt files from one chosen director
 
 ### [Django Checkbook Balancer](https://github.com/salxvador/PythonProjects/tree/main/Django_Checkbook):
 This project functions as a web-based bank account balancer. It allows the user to set up new profiles with initial deposit amounts, add new deposit/withdrawal transactions, and track historical activity for a given account.
+
+#### This repo contains other projects completed in Python that were meant to explore the functionality of this language. These projects are named for the facets that they focus on.
