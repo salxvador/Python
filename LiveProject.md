@@ -12,7 +12,7 @@ I began by creating a model for the data elements that I wanted to allow users o
 
 ![model](https://user-images.githubusercontent.com/98099229/165300143-4d4a7a36-26cd-48bd-81a3-058014c3fec1.png)
 
-I created a template using Django Crispy Forms and implemented my model as a for that would allow users to enter and save data for a tracked home:
+I created a template using Django Crispy Forms and implemented my model as a form that would allow users to enter and save data for a tracked home:
 
 ![Crispy Form](https://user-images.githubusercontent.com/98099229/165301397-55061194-48e5-41cc-ad46-d6b8b7fc32e7.png)
 
